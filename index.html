@@ -12,6 +12,8 @@
   <header>
     <h1>Baixinha&nbsp;Pharma</h1>
     <p class="subtitle">Sua loja de confiança para peptídeos, cápsulas e injetáveis</p>
+    <!-- Botão do carrinho que exibe o número de itens -->
+    <button id="cart-button" class="cart-button">Carrinho (0)</button>
   </header>
   <main>
     <section id="product-list" class="container">
@@ -38,6 +40,24 @@
         </select>
         <button type="submit" id="send-whatsapp">Enviar pedido pelo WhatsApp</button>
       </form>
+    </div>
+  </div>
+
+  <!-- Modal para o carrinho de compras -->
+  <div id="cart-modal" class="modal hidden">
+    <div class="modal-content cart-content">
+      <span id="close-cart-modal" class="close">&times;</span>
+      <h2>Carrinho de Compras</h2>
+      <div id="cart-items"></div>
+      <p id="cart-total">Total: R$ 0,00</p>
+      <label for="payment-method-cart">Forma de pagamento:</label>
+      <select id="payment-method-cart" required>
+        <option value="Debito">Débito</option>
+        <option value="Credito">Crédito</option>
+        <option value="Dinheiro">Dinheiro</option>
+        <option value="Pix">Pix</option>
+      </select>
+      <button id="send-cart-order">Enviar pedido pelo WhatsApp</button>
     </div>
   </div>
 

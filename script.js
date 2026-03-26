@@ -259,7 +259,7 @@ const products = [
 ];
 
 // Número de telefone para receber pedidos. Substitua pelo seu número de WhatsApp no formato internacional sem espaços ou sinais (ex: 5521999999999).
-const whatsappPhone = '5521999999999';
+const whatsappPhone = '5524992153810';
 
 // Elementos da página
 const productListEl = document.getElementById('product-list');
@@ -274,9 +274,114 @@ const orderForm = document.getElementById('order-form');
 
 let selectedProduct = null;
 
+// Carrinho de compras
+const cart = [];
+const cartButton = document.getElementById('cart-button');
+const cartModalEl = document.getElementById('cart-modal');
+const closeCartModalEl = document.getElementById('close-cart-modal');
+const cartItemsEl = document.getElementById('cart-items');
+const cartTotalEl = document.getElementById('cart-total');
+const paymentSelectCart = document.getElementById('payment-method-cart');
+const sendCartOrderBtn = document.getElementById('send-cart-order');
+
 // Função para formatar valor em reais
 function formatPrice(value) {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+// Atualiza o texto do botão do carrinho com a contagem de itens
+function updateCartButton() {
+  const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+  cartButton.textContent = `Carrinho (${totalQty})`;
+}
+
+// Adiciona um produto ao carrinho (incrementando quantidade se já existir)
+function addToCart(product) {
+  const existing = cart.find(item => item.product.id === product.id);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ product, quantity: 1 });
+  }
+  updateCartButton();
+}
+
+// Abre o modal do carrinho
+function openCartModal() {
+  renderCart();
+  cartModalEl.classList.remove('hidden');
+}
+
+// Fecha o modal do carrinho
+function closeCartModal() {
+  cartModalEl.classList.add('hidden');
+}
+
+// Renderiza a lista de itens do carrinho e calcula o total
+function renderCart() {
+  cartItemsEl.innerHTML = '';
+  let total = 0;
+  cart.forEach(item => {
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'cart-item';
+    const nameSpan = document.createElement('span');
+    nameSpan.textContent = `${item.product.name}${item.product.concentration ? ' (' + item.product.concentration + ')' : ''}`;
+    itemDiv.appendChild(nameSpan);
+    const qtyInput = document.createElement('input');
+    qtyInput.type = 'number';
+    qtyInput.min = 1;
+    qtyInput.value = item.quantity;
+    qtyInput.addEventListener('change', (e) => {
+      const val = parseInt(e.target.value, 10);
+      if (!isNaN(val) && val > 0) {
+        item.quantity = val;
+        renderCart();
+      }
+    });
+    itemDiv.appendChild(qtyInput);
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'Remover';
+    removeBtn.addEventListener('click', () => {
+      const idx = cart.indexOf(item);
+      if (idx !== -1) {
+        cart.splice(idx, 1);
+        renderCart();
+        updateCartButton();
+      }
+    });
+    itemDiv.appendChild(removeBtn);
+    cartItemsEl.appendChild(itemDiv);
+    total += item.product.price * item.quantity;
+  });
+  cartTotalEl.textContent = `Total: ${formatPrice(total)}`;
+}
+
+// Envia o pedido do carrinho via WhatsApp e esvazia o carrinho
+function sendCartOrder() {
+  if (cart.length === 0) return;
+  const paymentMethod = paymentSelectCart.value;
+  const lines = [];
+  cart.forEach(item => {
+    lines.push(`Produto: ${item.product.name}`);
+    if (item.product.concentration) {
+      lines.push(`Concentração: ${item.product.concentration}`);
+    }
+    lines.push(`Quantidade: ${item.quantity}`);
+    lines.push(`Valor unitário: ${formatPrice(item.product.price)}`);
+    lines.push(`Subtotal: ${formatPrice(item.product.price * item.quantity)}`);
+    lines.push('');
+  });
+  const total = cart.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+  lines.push(`Valor total: ${formatPrice(total)}`);
+  lines.push(`Forma de pagamento: ${paymentMethod}`);
+  lines.push('Obrigado por comprar com a Baixinha Pharma!');
+  const message = lines.join('\n');
+  const url = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+  // Limpa o carrinho e fecha o modal
+  cart.length = 0;
+  updateCartButton();
+  closeCartModal();
 }
 
 // Função para renderizar produtos
@@ -312,8 +417,8 @@ function renderProducts() {
 
     const btn = document.createElement('button');
     btn.className = 'buy-button';
-    btn.textContent = 'Comprar';
-    btn.addEventListener('click', () => openModal(product));
+    btn.textContent = 'Adicionar';
+    btn.addEventListener('click', () => addToCart(product));
     card.appendChild(btn);
 
     productListEl.appendChild(card);
@@ -370,6 +475,14 @@ function sendOrder(event) {
 // Eventos
 closeModalEl.addEventListener('click', closeModal);
 orderForm.addEventListener('submit', sendOrder);
+
+// Eventos do carrinho
+cartButton.addEventListener('click', openCartModal);
+closeCartModalEl.addEventListener('click', closeCartModal);
+sendCartOrderBtn.addEventListener('click', sendCartOrder);
+
+// Inicializa contagem do carrinho
+updateCartButton();
 
 // Renderizar produtos ao carregar
 renderProducts();
