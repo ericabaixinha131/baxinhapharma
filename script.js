@@ -284,6 +284,9 @@ const cartTotalEl = document.getElementById('cart-total');
 const paymentSelectCart = document.getElementById('payment-method-cart');
 const sendCartOrderBtn = document.getElementById('send-cart-order');
 
+// Elemento de notificação para itens adicionados ao carrinho
+const cartNotificationEl = document.getElementById('cart-notification');
+
 // Função para formatar valor em reais
 function formatPrice(value) {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -295,6 +298,17 @@ function updateCartButton() {
   cartButton.textContent = `Carrinho (${totalQty})`;
 }
 
+// Mostra uma notificação quando um produto é adicionado ao carrinho
+function showCartNotification(product) {
+  if (!cartNotificationEl) return;
+  cartNotificationEl.textContent = `Produto "${product.name}" adicionado ao carrinho!`;
+  cartNotificationEl.classList.add('show');
+  // Remove a notificação após alguns segundos
+  setTimeout(() => {
+    cartNotificationEl.classList.remove('show');
+  }, 3000);
+}
+
 // Adiciona um produto ao carrinho (incrementando quantidade se já existir)
 function addToCart(product) {
   const existing = cart.find(item => item.product.id === product.id);
@@ -304,6 +318,7 @@ function addToCart(product) {
     cart.push({ product, quantity: 1 });
   }
   updateCartButton();
+  showCartNotification(product);
 }
 
 // Abre o modal do carrinho

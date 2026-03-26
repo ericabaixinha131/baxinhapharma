@@ -124,6 +124,8 @@ header h1 {
 /* Conteúdo do modal de carrinho */
 .cart-content {
   max-width: 500px;
+  /* Text color for cart modal */
+  color: #222;
 }
 
 .cart-content h2 {
@@ -151,16 +153,18 @@ header h1 {
   border: 1px solid #ccc;
 }
 
-.cart-item button {
+/* Botões de remoção dentro do carrinho */
+.cart-content .cart-item button {
   background-color: #ef476f;
   color: #fff;
   border: none;
   padding: 0.3rem 0.5rem;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: 0.5rem;
 }
 
-.cart-item button:hover {
+.cart-content .cart-item button:hover {
   background-color: #d43b6b;
 }
 
@@ -193,6 +197,45 @@ header h1 {
 
 #send-cart-order:hover {
   background-color: #0bc9a1;
+}
+
+/* Notification for items added to cart */
+#cart-notification {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #06d6a0;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 3000;
+}
+
+#cart-notification.show {
+  opacity: 1;
+}
+
+/* Toast notification for cart actions */
+#cart-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #06d6a0;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 1001;
+}
+
+#cart-notification.show {
+  opacity: 1;
 }
 
 /* Modal */
