@@ -7,20 +7,22 @@
 
 body {
   font-family: 'Montserrat', Arial, sans-serif;
-  /* Use a subtle gradient overlay on top of our fitness background image to improve readability */
-  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('fitness-bg2.png');
+  /* Use a dark gradient overlay over the fitness background image for better contrast */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('fitness-bg2.png');
   background-size: cover;
-  background-attachment: fixed;
   background-position: center;
-  color: #222;
+  background-attachment: fixed;
+  color: #fff;
   line-height: 1.5;
 }
 
 header {
   text-align: center;
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  color: white;
+  /* Semi-transparent header over the background */
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  color: #fff;
   margin-bottom: 1.5rem;
 }
 
@@ -45,19 +47,22 @@ header h1 {
 }
 
 .card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* Glass effect card: semi-transparent with blur */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   padding: 1.2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: #fff;
 }
 
 .card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: #0077b6;
+  color: #00e5ff;
 }
 
 .card p {
@@ -68,7 +73,7 @@ header h1 {
 /* Description text inside product cards */
 .card .desc {
   font-size: 0.85rem;
-  color: #555;
+  color: #ddd;
   margin-bottom: 0.5rem;
   flex-grow: 1;
 }
@@ -76,7 +81,7 @@ header h1 {
 .price {
   font-weight: 600;
   font-size: 1.1rem;
-  color: #ef476f;
+  color: #00ff9c;
   margin-bottom: 1rem;
 }
 

@@ -6,7 +6,7 @@ const products = [
     concentration: '4 ML (15MG)',
     price: 1100,
     description:
-      'Semaglutide injection (Ozempic) helps control blood sugar in type 2 diabetes, reduces risks of heart attack and stroke, aids weight loss, and slows stomach emptying to decrease appetite.'
+      'Auxilia no controle da glicemia, promovendo mais equilíbrio no organismo. Também contribui para redução do apetite e apoio no emagrecimento.'
   },
   {
     id: 2,
@@ -14,7 +14,7 @@ const products = [
     concentration: '3 ML (10MG)',
     price: 1400,
     description:
-      'Tirzepatide is a dual GLP‑1 and GIP receptor agonist approved for type 2 diabetes; once‑weekly injections improve glycemic control and produce significant weight loss.'
+      'Produto moderno que auxilia no controle do açúcar no sangue e favorece a perda de peso de forma consistente, ajudando na saciedade.'
   },
   {
     id: 3,
@@ -22,7 +22,7 @@ const products = [
     concentration: '3 ML (30MG)',
     price: 2000,
     description:
-      'Tirzepatide is a dual GLP‑1 and GIP receptor agonist approved for type 2 diabetes; once‑weekly injections improve glycemic control and produce significant weight loss.'
+      'Produto moderno que auxilia no controle do açúcar no sangue e favorece a perda de peso de forma consistente, ajudando na saciedade.'
   },
   {
     id: 4,
@@ -30,7 +30,7 @@ const products = [
     concentration: '3 ML (15MG)',
     price: 2400,
     description:
-      'Retatrutide is a triple agonist of GLP‑1, GIP and glucagon receptors; clinical trials show it causes significant weight loss, delays gastric emptying, reduces food intake and improves glycemic control.'
+      'Tecnologia avançada voltada para controle metabólico, auxiliando na redução de peso e melhora do funcionamento do organismo.'
   },
   {
     id: 5,
@@ -38,7 +38,7 @@ const products = [
     concentration: '2X (15 ML)',
     price: 270,
     description:
-      'Lipotropic injections combine nutrients like vitamin B12, choline, inositol, methionine and L‑carnitine; marketed for fat loss but research on effectiveness is limited, so they should complement diet and exercise.'
+      'Fórmula lipotrópica que auxilia no metabolismo de gorduras, contribuindo para mais energia e definição corporal.'
   },
   {
     id: 6,
@@ -46,7 +46,7 @@ const products = [
     concentration: '2X (15 ML)',
     price: 330,
     description:
-      'Lipotropic injections combine nutrients like vitamin B12, choline, inositol, methionine and L‑carnitine; marketed for fat loss but research on effectiveness is limited, so they should complement diet and exercise.'
+      'Fórmula lipotrópica que auxilia no metabolismo de gorduras, contribuindo para mais energia e definição corporal.'
   },
   {
     id: 7,
@@ -54,7 +54,7 @@ const products = [
     concentration: '30 CAPS (15MG)',
     price: 150,
     description:
-      'Sibutramine is a serotonin and norepinephrine reuptake inhibitor that suppresses appetite for obesity therapy; it was withdrawn due to increased cardiovascular risk.'
+      'Auxilia no controle do apetite, ajudando na redução da ingestão alimentar e no processo de emagrecimento.'
   },
   {
     id: 8,
@@ -62,7 +62,7 @@ const products = [
     concentration: '30 CAPS (25MG)',
     price: 170,
     description:
-      'Mesterolone supplements natural testosterone and is used to treat male hypogonadism and male infertility; it works like endogenous testosterone to improve symptoms related to low testosterone.'
+      'Contribui para o equilíbrio hormonal masculino, auxiliando no desempenho físico e bem‑estar.'
   },
   {
     id: 9,
@@ -70,7 +70,7 @@ const products = [
     concentration: '28 CAPS (1MG)',
     price: 200,
     description:
-      'Anastrozole is an aromatase inhibitor used as hormone therapy; it reversibly blocks aromatase to lower estrogen levels and slow estrogen‑dependent cancers.'
+      'Auxilia no controle hormonal, contribuindo para equilíbrio do organismo.'
   },
   {
     id: 10,
@@ -78,7 +78,7 @@ const products = [
     concentration: '30 CAPS (10MG)',
     price: 150,
     description:
-      'Tamoxifen citrate is a selective estrogen receptor modulator (SERM); it binds to estrogen receptors, blocking estrogen’s effects in breast tissue while mimicking them in bone.'
+      'Atua no equilíbrio hormonal, sendo utilizado em protocolos específicos para controle do estrogênio.'
   },
   {
     id: 11,
@@ -86,7 +86,7 @@ const products = [
     concentration: '10ML (300MG)',
     price: 210,
     description:
-      'Testosterone enanthate is a form of injectable testosterone used to treat low testosterone (hypogonadism). Testosterone injections raise testosterone levels but carry risks such as high blood pressure and heart problems.'
+      'Contribui para aumento de força, disposição e desempenho físico.'
   },
   {
     id: 12,
@@ -94,7 +94,7 @@ const products = [
     concentration: '10ML (250MG)',
     price: 210,
     description:
-      'Durateston is a blend of testosterone esters used in testosterone replacement therapy to treat low testosterone; as with other testosterone injections, it should only be used under medical supervision due to risks like high blood pressure and heart problems.'
+      'Contribui para aumento de força, disposição e desempenho físico.'
   },
   {
     id: 13,
@@ -102,7 +102,7 @@ const products = [
     concentration: '10ML (200MG)',
     price: 210,
     description:
-      'Testosterone cypionate is an injectable solution prescribed to increase testosterone levels in males with hypogonadism; it replaces the testosterone that the body cannot produce and has similar risks to other testosterone injections.'
+      'Contribui para aumento de força, disposição e desempenho físico.'
   },
   {
     id: 14,
@@ -110,7 +110,7 @@ const products = [
     concentration: '10ML (200MG)',
     price: 210,
     description:
-      'Testosterone propionate is a short‑acting testosterone ester used to treat low testosterone; like other testosterone injections, it should be administered by healthcare professionals due to potential cardiovascular risks.'
+      'Contribui para aumento de força, disposição e desempenho físico.'
   },
   {
     id: 15,
@@ -118,7 +118,7 @@ const products = [
     concentration: '10ML (100MG)',
     price: 210,
     description:
-      'Trenbolone acetate is an anabolic steroid originally used in veterinary medicine to increase muscle growth and appetite in livestock; it has been illicitly used by athletes to build body mass.'
+      'Produto voltado para ganho de massa muscular e definição, amplamente utilizado em protocolos avançados.'
   },
   {
     id: 16,
@@ -126,7 +126,7 @@ const products = [
     concentration: '10ML (300MG)',
     price: 210,
     description:
-      'Nandrolone decanoate is a synthetic anabolic steroid derived from testosterone; medically, it treats anemia and builds tissue but is misused by athletes to increase muscle mass. It should only be used under medical supervision due to serious side effects.'
+      'Ajuda no crescimento muscular e recuperação, proporcionando aumento de força e performance.'
   },
   {
     id: 17,
@@ -134,7 +134,7 @@ const products = [
     concentration: '10ML (300MG)',
     price: 210,
     description:
-      'Boldenone is an anabolic androgenic steroid developed for veterinary use; it stimulates protein synthesis and erythropoietin release and is illegally used to increase muscle mass, with no therapeutic use for humans.'
+      'Promove o aumento de massa magra e força, sendo utilizado para definição e performance.'
   },
   {
     id: 18,
@@ -142,7 +142,7 @@ const products = [
     concentration: '10ML (100MG)',
     price: 210,
     description:
-      'Drostanolone is a potent synthetic androgenic steroid similar to testosterone; it is a schedule III controlled substance indicated for recurrent breast cancer therapy in postmenopausal women but often misused as an anabolic agent.'
+      'Produto voltado para ganho de massa muscular e definição, amplamente utilizado em protocolos avançados.'
   },
   {
     id: 19,
@@ -150,7 +150,7 @@ const products = [
     concentration: '10ML (100MG)',
     price: 350,
     description:
-      'Methenolone (Primobolan) is an anabolic steroid derived from dihydrotestosterone; it was prescribed for muscle loss after surgery, osteoporosis and breast cancer, and to promote weight gain in underweight infants. It has moderate anabolic effect and is banned in sports.'
+      'Promove ganhos secos e definição, ideal para fases de cutting e manutenção da massa magra.'
   },
   {
     id: 20,
@@ -158,7 +158,7 @@ const products = [
     concentration: '10ML (200MG)',
     price: 220,
     description:
-      'Trenbolone enanthate is a longer‑acting form of trenbolone; like the acetate, it is used in veterinary medicine to increase muscle growth and appetite but has been misused by athletes.'
+      'Produto voltado para ganho de massa muscular e definição, amplamente utilizado em protocolos avançados.'
   },
   {
     id: 21,
@@ -166,7 +166,7 @@ const products = [
     concentration: '30ML (50MG)',
     price: 210,
     description:
-      'Stanozolol (Winstrol) is a synthetic anabolic steroid similar to testosterone. It is used to treat hereditary angioedema to reduce the frequency and severity of swelling attacks.'
+      'Auxilia no aumento de força e resistência, contribuindo para uma melhor performance física.'
   },
   {
     id: 22,
@@ -174,7 +174,7 @@ const products = [
     concentration: '30ML (50MG)',
     price: 1560,
     description:
-      'Somatropin (synthetic human growth hormone) is used to treat poor growth in children due to conditions such as Turner’s syndrome and chronic renal insufficiency and to treat AIDS‑associated wasting and growth hormone deficiency in adults. hGH regulates body composition and metabolism; misuse for muscle growth and fat loss is common.'
+      'Auxilia na recuperação muscular, melhora da composição corporal e desempenho físico.'
   },
   {
     id: 23,
@@ -182,7 +182,7 @@ const products = [
     concentration: '10ML (100MG)',
     price: 210,
     description:
-      'Methandrostenolone (Dianabol) is an anabolic steroid developed in 1958; it increases protein synthesis and muscle strength but can cause side effects such as decreased red blood cell production and masculinizing effects. It has been banned but remains illegally produced.'
+      'Contribui para aumento de massa muscular e melhora da performance.'
   },
   {
     id: 24,
@@ -190,7 +190,7 @@ const products = [
     concentration: '10ML (100MG)',
     price: 210,
     description:
-      'Nandrolone phenylpropionate is a shorter‑acting form of nandrolone; like other nandrolone esters, it treats anemia and tissue‑wasting conditions but is misused by athletes for muscle gain.'
+      'Contribui para crescimento muscular e recuperação rápida, auxiliando na força e performance.'
   },
   {
     id: 25,
@@ -198,7 +198,7 @@ const products = [
     concentration: '10MG (100 CAPS)',
     price: 210,
     description:
-      'Oxandrolone is an anabolic steroid used with a diet program to cause weight gain after surgery, injury, or infection; it also treats bone pain in osteoporosis and prevents side effects of long‑term corticosteroids by increasing protein production in the body.'
+      'Contribui para ganho de massa muscular magra e desempenho físico.'
   },
   {
     id: 26,
@@ -206,7 +206,7 @@ const products = [
     concentration: '20MG (100 CAPS)',
     price: 220,
     description:
-      'Oxandrolone is an anabolic steroid used with a diet program to cause weight gain after surgery, injury, or infection; it also treats bone pain in osteoporosis and prevents side effects of long‑term corticosteroids by increasing protein production in the body.'
+      'Contribui para ganho de massa muscular magra e desempenho físico.'
   },
   {
     id: 27,
@@ -214,7 +214,7 @@ const products = [
     concentration: '50MG (30 CAPS)',
     price: 210,
     description:
-      'Oxymetholone (Hemogenin/Anadrol) is a steroid medication used to treat anemia by stimulating red blood cell production. It is banned for use by athletes.'
+      'Contribui para aumento de massa muscular e força, sendo utilizado para ganhos rápidos.'
   },
   {
     id: 28,
@@ -222,7 +222,7 @@ const products = [
     concentration: '10MG (100 CAPS)',
     price: 210,
     description:
-      'Stanozolol (Winstrol) is a synthetic anabolic steroid similar to testosterone. It is used to treat hereditary angioedema to reduce the frequency and severity of swelling attacks.'
+      'Auxilia no aumento de força e resistência, contribuindo para uma melhor performance física.'
   },
   {
     id: 29,
@@ -230,7 +230,7 @@ const products = [
     concentration: '10MG (100 CAPS)',
     price: 210,
     description:
-      'Methandrostenolone (Dianabol) is an anabolic steroid developed in 1958; it increases protein synthesis and muscle strength but can cause side effects such as decreased red blood cell production and masculinizing effects. It has been banned but remains illegally produced.'
+      'Contribui para aumento de massa muscular e melhora da performance.'
   },
   {
     id: 30,
@@ -238,7 +238,7 @@ const products = [
     concentration: '10MG (100 CAPS)',
     price: 220,
     description:
-      'Turinabol (chlorodehydromethyltestosterone) is an anabolic steroid developed in the 1960s and used in systematic doping programs to enhance athletic performance; it increases muscle mass and strength but is illegal in competitive sports and carries significant health risks.'
+      'Contribui para ganhos consistentes de massa muscular e força, com menor retenção hídrica.'
   },
   {
     id: 31,
@@ -246,7 +246,7 @@ const products = [
     concentration: '25MG (50 CAPS)',
     price: 220,
     description:
-      'Testosterone propionate capsules are oral forms of testosterone; like injectable forms, they are used for testosterone replacement therapy but should be used under medical supervision due to cardiovascular risks.'
+      'Contribui para aumento de força, disposição e desempenho físico.'
   },
   {
     id: 32,
@@ -254,12 +254,12 @@ const products = [
     concentration: '',
     price: 150,
     description:
-      'VitaFemme is a health supplement designed for women; it combines essential vitamins and minerals such as vitamins A and E, zinc, and calcium to support immune function, bone health and protect against oxidative stress. It also includes biotin, iron and folate for healthy hair, skin, nails and normal blood formation.'
+      'Suplemento completo com vitaminas e minerais essenciais para saúde, energia e bem‑estar feminino.'
   }
 ];
 
 // Número de telefone para receber pedidos. Substitua pelo seu número de WhatsApp no formato internacional sem espaços ou sinais (ex: 5521999999999).
-const whatsappPhone = '5524992153810';
+const whatsappPhone = '5521999999999';
 
 // Elementos da página
 const productListEl = document.getElementById('product-list');
@@ -350,7 +350,7 @@ function buildWhatsAppMessage(product, quantity, paymentMethod) {
   lines.push(`Valor unitário: ${formatPrice(unitPrice)}`);
   lines.push(`Valor total: ${formatPrice(total)}`);
   lines.push(`Forma de pagamento: ${paymentMethod}`);
-  lines.push('Obrigado por comprar com a Baixinha Pharma! Aguarde um momento que já vou atende-lo!');
+  lines.push('Obrigado por comprar com a Baixinha Pharma!');
   return lines.join('\n');
 }
 
