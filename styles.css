@@ -257,7 +257,8 @@ header h1 {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: #1e1e1e; /* fundo cinza escuro */
+  color: #ffffff; /* texto branco */
   border-radius: 8px;
   padding: 2rem;
   width: 90%;
